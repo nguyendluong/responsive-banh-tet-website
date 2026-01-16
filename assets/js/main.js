@@ -17,6 +17,30 @@ const navLinks = document.querySelectorAll('.nav__link');
 const closeMenu = () => navMenu && navMenu.classList.remove('show-menu');
 navLinks.forEach(link => link.addEventListener('click', closeMenu));
 
+/*=============== HIDE MENU ON SCROLL ===============*/
+const hideMenuOnScroll = () => {
+  if (!navMenu) return;
+  if (navMenu.classList.contains('show-menu')) {
+    navMenu.classList.remove('show-menu');
+  }
+};
+['scroll', 'touchmove', 'wheel'].forEach(evt => {
+  window.addEventListener(evt, hideMenuOnScroll, { passive: true });
+  document.addEventListener(evt, hideMenuOnScroll, { passive: true });
+  if (navMenu) navMenu.addEventListener(evt, hideMenuOnScroll, { passive: true });
+});
+
+/*=============== CLOSE MENU WHEN SCROLL POSITION CHANGES ===============*/
+let lastScrollY = window.scrollY;
+const watchScrollPosition = () => {
+  if (navMenu && navMenu.classList.contains('show-menu') && window.scrollY !== lastScrollY) {
+    closeMenu();
+  }
+  lastScrollY = window.scrollY;
+  requestAnimationFrame(watchScrollPosition);
+};
+requestAnimationFrame(watchScrollPosition);
+
 /*=============== ADD BLUR HEADER ===============*/
 const blurHeader = () => {
   const header = document.getElementById('header');
