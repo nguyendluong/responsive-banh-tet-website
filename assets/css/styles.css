@@ -1,23 +1,23 @@
 /*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&family=Playfair+Display:wght@600;700&display=swap");
 
 /*=============== VARIABLES CSS ===============*/
 :root {
   --header-height: 3.5rem;
 
   /*========== Colors ==========*/
-  --first-color: hsl(28, 88%, 62%);
-  --first-color-alt: hsl(28, 84%, 58%);
-  --title-color: hsl(0, 0%, 95%);
-  --text-color: hsl(0, 0%, 75%);
-  --text-color-light: hsl(0, 0%, 65%);
-  --black-color: hsl(0, 0%, 6%);
-  --body-color: hsl(0, 0%, 6%);
-  --container-color: hsl(0, 0%, 10%);
+  --first-color: hsl(10, 86%, 62%);
+  --first-color-alt: hsl(10, 88%, 56%);
+  --title-color: hsl(44, 92%, 88%);
+  --text-color: hsl(36, 32%, 82%);
+  --text-color-light: hsl(36, 28%, 72%);
+  --black-color: hsl(358, 82%, 6%);
+  --body-color: hsl(354, 68%, 8%);
+  --container-color: hsla(351, 70%, 12%, .9);
 
   /*========== Font and typography ==========*/
-  --body-font: "Montserrat", sans-serif;
-  --second-font: "Dancing Script", cursive;
+  --body-font: "Be Vietnam Pro", sans-serif;
+  --second-font: "Playfair Display", serif;
   --biggest-font-size: 3rem;
   --bigger-font-size: 2rem;
   --h1-font-size: 1.5rem;
@@ -70,6 +70,12 @@ body {
   background-color: var(--body-color);
   color: var(--text-color);
   line-height: 1.6;
+  background-image:
+    radial-gradient(circle at 12% 20%, hsla(44, 96%, 60%, .14), transparent 30%),
+    radial-gradient(circle at 82% 14%, hsla(10, 90%, 60%, .18), transparent 26%),
+    radial-gradient(circle at 16% 78%, hsla(10, 90%, 50%, .12), transparent 28%),
+    linear-gradient(135deg, hsla(350, 82%, 10%, .95), hsla(350, 70%, 7%, .95));
+  background-attachment: fixed;
 }
 
 button {
@@ -116,6 +122,8 @@ img {
   font-family: var(--second-font);
   margin-bottom: 1.5rem;
   text-align: center;
+  letter-spacing: .5px;
+  color: var(--title-color);
 }
 
 .main {
@@ -126,15 +134,15 @@ img {
   display: inline-block;
   padding: 1rem 1.5rem;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--first-color), var(--first-color-alt));
-  color: var(--black-color);
+  background: linear-gradient(120deg, var(--first-color), #f7b733);
+  color: #2c0a0a;
   font-weight: var(--font-semi-bold);
   transition: transform .3s ease, box-shadow .3s ease;
 }
 
 .button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 15px 40px hsla(28, 88%, 62%, .25);
+  box-shadow: 0 15px 40px hsla(10, 88%, 62%, .25);
 }
 
 .button__link {
@@ -144,7 +152,7 @@ img {
 }
 
 .button__link:hover {
-  background: hsla(28, 88%, 62%, .08);
+  background: hsla(10, 88%, 62%, .08);
   box-shadow: none;
 }
 
@@ -170,7 +178,7 @@ img {
   color: var(--title-color);
   font-family: var(--second-font);
   font-size: var(--h1-font-size);
-  letter-spacing: .5px;
+  letter-spacing: 1px;
 }
 
 .nav__menu {
@@ -243,7 +251,7 @@ img {
 }
 
 .blur-header {
-  background-color: hsla(0, 0%, 6%, .7);
+  background-color: hsla(350, 60%, 8%, .7);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 6px 30px hsla(0, 0%, 0%, .35);
@@ -266,7 +274,7 @@ img {
 }
 
 .home__tag {
-  color: var(--first-color);
+  color: #f7b733;
   font-weight: var(--font-bold);
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -315,8 +323,8 @@ img {
 .home__circle {
   position: absolute;
   inset: 15%;
-  background: radial-gradient(circle at 30% 30%, hsla(28, 88%, 62%, .25), transparent 50%),
-              radial-gradient(circle at 70% 60%, hsla(28, 88%, 62%, .25), transparent 50%);
+  background: radial-gradient(circle at 30% 30%, hsla(44, 96%, 60%, .25), transparent 50%),
+              radial-gradient(circle at 70% 60%, hsla(10, 88%, 62%, .28), transparent 50%);
   border-radius: 50%;
   filter: blur(20px);
 }
@@ -386,7 +394,7 @@ img {
   overflow: hidden;
   display: grid;
   gap: 1rem;
-  border: 1px solid hsla(0, 0%, 100%, .04);
+  border: 1px solid hsla(44, 94%, 70%, .35);
   transition: transform .3s ease, box-shadow .3s ease;
 }
 
@@ -394,7 +402,7 @@ img {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, hsla(28, 88%, 62%, .12), transparent 60%);
+  background: linear-gradient(135deg, hsla(44, 88%, 62%, .14), transparent 55%);
   pointer-events: none;
 }
 
@@ -428,7 +436,7 @@ img {
   display: inline-flex;
   align-items: center;
   gap: .5rem;
-  color: var(--first-color);
+  color: #f7b733;
   font-weight: var(--font-semi-bold);
   transition: gap .3s ease, color .3s ease;
 }
@@ -484,7 +492,7 @@ img {
   border-radius: 1.25rem;
   padding: 1.5rem 1rem;
   text-align: center;
-  border: 1px solid hsla(0, 0%, 100%, .04);
+  border: 1px solid hsla(44, 90%, 70%, .28);
   transition: transform .3s ease, box-shadow .3s ease;
 }
 
@@ -512,7 +520,7 @@ img {
 }
 
 .favorite__price {
-  color: var(--first-color);
+  color: #f7b733;
   font-weight: var(--font-bold);
 }
 
@@ -521,9 +529,9 @@ img {
   position: relative;
   overflow: hidden;
   border-radius: 2rem;
-  background: linear-gradient(135deg, hsla(0, 0%, 0%, .65), hsla(0, 0%, 0%, .65)), url("../img/visit-bg.jpg") center/cover no-repeat;
+  background: linear-gradient(120deg, hsla(350, 85%, 12%, .85), hsla(10, 80%, 20%, .78)), url("../img/visit-tet.svg") center/cover no-repeat;
   padding: 3rem 2.5rem;
-  border: 1px solid hsla(0, 0%, 100%, .06);
+  border: 1px solid hsla(44, 90%, 70%, .28);
 }
 
 .visit__data {
